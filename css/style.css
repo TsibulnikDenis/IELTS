@@ -1,7 +1,35 @@
-h1{
+    body{
+    background-color: #d9d6d6;
+}
+.title{
    font-family: verdana;
     font-size: 22px;
-    color: fff;
     background-image: url(../img/f044.png) 0 50% no-repeat;
-    
+    min-height: 175px; 
+    padding: 60px; 
+}
+.gradient{
+    background-image:  linear-gradient(to bottom, #a00c22, #ef0f2f);
+    color: #fff;
+}
+.phone-header{
+    text-align: center;
+    font-size: 42px;
+}
+.action{
+    min-height: 75px;
+    font-size: 42px;
+}
+.table-date{
+    caption-side: bottom;
+}
+.date, .exam{
+	background-color:#f7f7f7;
+	border-top:#eaeaea 2px solid;
+	border-bottom:#eaeaea 2px solid;
+	color:#7E7E7E;
+	padding:25px;}
+}
+.glyphicon-edit{
+    font-size: 150px;
 }
