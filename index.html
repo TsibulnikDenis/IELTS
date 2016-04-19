@@ -58,30 +58,48 @@
                 </form>
                 <button class="col-lg-12 col-sm-12 col-md-12 col-xs-12 btn action gradient-blue" >Участвовать!</button>
 -->
-                   
-                    <form class="form-horizontal ">
+                   <script>
+document.getElementById('feedback-form').addEventListener('submit', function(evt){
+  var http = new XMLHttpRequest(), f = this;
+  evt.preventDefault();
+  http.open("POST", "contacts.php", true);
+  http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  http.send("inputName=" + f.inputName.value + "inputFamily=" + f.inputFamily.value + "&inputPhone=" + f.inputPhone.value + "&inputEmail=" + f.inputEmail.value);
+  http.onreadystatechange = function() {
+    if (http.readyState == 4 && http.status == 200) {
+      alert(http.responseText + ', Ваше сообщение получено.\nНаши специалисты ответят Вам в течении 2-х дней.\nБлагодарим за интерес к нашей фирме!');    
+      f.inputEmail.removeAttribute('value'); // очистить поле сообщения (две строки)
+      f.inputEmail.value='';
+    }
+  }
+  http.onerror = function() {
+    alert('Извините, данные не были переданы');
+  }
+}, false);
+</script>
+                    <form  method="post" id="feedback-form" class="form-horizontal">
                         <div class="control-group ">
-                            <label class="control-label" for="inputEmail">Имя</label>
+                            <label class="control-label" for="inputName">Имя</label>
                             <div class="controls">
-                              <input class="span12"type="text" id="inputName" placeholder="Имя">
+                              <input class="span12" required type="text" id="inputName" placeholder="Имя" name="inputName" x-autocompletetype="name">
                             </div>
                         </div>
                         <div class="control-group">
                             <label class="control-label" for="inputFamily">Фамилия</label>
                             <div class="controls">
-                              <input class="span12"type="text" id="inputFamily" placeholder="Фамилия">
+                              <input class="span12" required type="text" id="inputFamily" placeholder="Фамилия" name="inputFamily" x-autocompletetype="Family">
                             </div>
                         </div>
                         <div class="control-group">
                         <label class="control-label" for="inputPhone">Телефон</label>
                         <div class="controls">
-                          <input class="span12"type="text" id="inputPhone" placeholder="Телефон">
+                          <input class="span12" required type="text" id="inputPhone" placeholder="Телефон" name="inputPhone" x-autocompletetype="Phone">
                         </div>
                       </div>
                         <div class="control-group">
                             <label class="control-label" for="inputEmail">E-mail</label>
                             <div class="controls">
-                              <input class="span12"type="E-mail" id="inputEmail" placeholder="E-mail">
+                              <input class="span12" required type="E-mail" id="inputEmail" placeholder="E-mail" name="inputEmail" x-autocompletetype="Email">
                             </div>
                       </div>
                         <div class="control-group">
