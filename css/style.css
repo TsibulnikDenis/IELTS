@@ -245,3 +245,6 @@ input{
     border-top: #eaeaea 0.118em solid;
     margin: 0px;
 }
+.text-warning{
+    color: red;
+}

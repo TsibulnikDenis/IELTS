@@ -8,11 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
-
+    
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- Yandex.Metrika counter --> <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter36885755 = new Ya.Metrika({ id:36885755, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/36885755" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
     </head>
     <body>
        <div class="container">
@@ -35,7 +36,7 @@
             <section class="col-lg-4">
                <div class="phone-header gradient-blue">
                    <h3>Звони сейчас!</h3>
-                   <a href="tel:+7(861)255-10-55">8&nbsp;(861)&nbsp;255-10-55</a>
+                   <a href="tel:+7(861)255-10-55" onclick="yaCounter36885755.reachGoal('call_office'); return true;">8&nbsp;(861)&nbsp;255-10-55</a>
                </div>
                <div class="reg-form contact-form">
                    <h3 class="gradient-blue">Отправить заявку</h3>
@@ -58,25 +59,7 @@
                 </form>
                 <button class="col-lg-12 col-sm-12 col-md-12 col-xs-12 btn action gradient-blue" >Участвовать!</button>
 -->
-                   <script>
-document.getElementById('feedback-form').addEventListener('submit', function(evt){
-  var http = new XMLHttpRequest(), f = this;
-  evt.preventDefault();
-  http.open("POST", "contacts.php", true);
-  http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  http.send("inputName=" + f.inputName.value + "inputFamily=" + f.inputFamily.value + "&inputPhone=" + f.inputPhone.value + "&inputEmail=" + f.inputEmail.value);
-  http.onreadystatechange = function() {
-    if (http.readyState == 4 && http.status == 200) {
-      alert(http.responseText + ', Ваше сообщение получено.\nНаши специалисты ответят Вам в течении 2-х дней.\nБлагодарим за интерес к нашей фирме!');    
-      f.inputEmail.removeAttribute('value'); // очистить поле сообщения (две строки)
-      f.inputEmail.value='';
-    }
-  }
-  http.onerror = function() {
-    alert('Извините, данные не были переданы');
-  }
-}, false);
-</script>
+                   
                     <form  method="post" id="feedback-form" class="form-horizontal">
                         <div class="control-group ">
                             <label class="control-label" for="inputName">Имя</label>
@@ -104,16 +87,35 @@ document.getElementById('feedback-form').addEventListener('submit', function(evt
                       </div>
                         <div class="control-group">
                             <div class="controls">
-                              <button type="submit" class="span12 btn action gradient-blue">Участвовать!</button>
+                              <button type="submit" class="span12 btn action gradient-blue" onclick="yaCounter36885755.reachGoal('feedback'); return true;">Участвовать!</button>
                             </div>
                         </div>
                     </form>
+                    <script>
+document.getElementById('feedback-form').addEventListener('submit', function(evt){
+  var http = new XMLHttpRequest(), f = this;
+  evt.preventDefault();
+  http.open("POST", "contacts.php", true);
+  http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  http.send("inputName=" + f.inputName.value + "inputFamily=" + f.inputFamily.value + "&inputPhone=" + f.inputPhone.value + "&inputEmail=" + f.inputEmail.value);
+  http.onreadystatechange = function() {
+    if (http.readyState == 4 && http.status == 200) {
+      alert('Ваше сообщение получено.\nНаши специалисты ответят Вам в течении 2-х дней.\nБлагодарим за интерес к нашей фирме!');    
+      f.inputEmail.removeAttribute('value'); // очистить поле сообщения (две строки)
+      f.inputEmail.value='';
+    }
+  }
+  http.onerror = function() {
+    alert('Извините, данные не были переданы');
+  }
+}, false);
+</script>
                 </div>
             </section>
         </header>
         <section class="date date-ico indent">
             <h2 class="">Ближайшие даты проведения экзамена IELTS в Краснодаре:</h2>
-            <p class="text-warning">Стоимость экзамена – 20500&nbsp;руб.</p>
+            <p class="text-warning">Стоимость экзамена – 22500&nbsp;руб.</p>
             <table class="table-date table">
                <caption>
                 <i class="text-warning">Внимание, данная заявка не является регистрацией на экзамен</i>
@@ -187,8 +189,8 @@ document.getElementById('feedback-form').addEventListener('submit', function(evt
                     <img src="img/logo_bks.jpg" alt="bks" class="col-lg-3 col-md-4 col-sm-4  col-xs-8">
                 </div>
              <address class="address-star col-xs-12">ул.&nbsp;Красноармейская,&nbsp;55/1,&nbsp;2&nbsp;этаж&nbsp;11-этажного&nbsp;здания<br>
-              <a href="tel:+7(861)255-10-55">тел:&nbsp;(861)&nbsp;255-10-55</a><br>
-               <a href="tel:+7(861)299-99-27">тел/факс:&nbsp;(861)&nbsp;299-99-27</a>
+              <a href="tel:+7(861)255-10-55" onclick="yaCounter36885755.reachGoal('call_office_footer1'); return true;">тел:&nbsp;(861)&nbsp;255-10-55</a><br>
+               <a href="tel:+7(861)299-99-27" onclick="yaCounter36885755.reachGoal('call_office_footer2'); return true;">тел/факс:&nbsp;(861)&nbsp;299-99-27</a>
              </address>
         </footer>
         </div>
