@@ -43,10 +43,6 @@ body{
     font-family: CertaSans;
     font-weight: 500;
 }
-.control-group label,
-.controls input{
-    margin-left: 25px;
-}
 .form-horizontal div{
     margin-top: 10px;
 }
@@ -214,6 +210,7 @@ input{
 .offer{
     color: #8f8f8f;
     font-family: Verdana;
+	background-color:#f7f7f7;
     font-size: 0.986em;
 }
 .action{
@@ -223,15 +220,17 @@ input{
 .table-date{
     caption-side: bottom;
 }
-.feature{
-    background-color: #ffffff;
+.feature,
+.comment{
     color: #8e8e8e;
     font-size: 0.986em;
+	background-color:#f7f7f7;
     font-family: 'Trebuchet MS';
 }
-.date, .exam{
+.date,
+.exam{
+    background-color: #ffffff;
     position: relative;
-	background-color:#f7f7f7;
 	border-top:#eaeaea 0.118em solid;
 	border-bottom:#eaeaea 0.118em solid;
 	color:#7E7E7E;
@@ -247,4 +246,10 @@ input{
 }
 .text-warning{
     color: red;
+}
+.foto{
+    margin-bottom: 25px;
+}
+.controls{
+    margin-bottom: 30px;
 }
